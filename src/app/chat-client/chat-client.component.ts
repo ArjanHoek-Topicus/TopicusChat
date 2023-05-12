@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { IMessage } from 'src/models/messageInterface';
 
 @Component({
@@ -6,11 +13,24 @@ import { IMessage } from 'src/models/messageInterface';
   templateUrl: './chat-client.component.html',
   styleUrls: ['./chat-client.component.scss'],
 })
-export class ChatClientComponent {
+export class ChatClientComponent implements OnInit, OnDestroy {
   @Input() title = '';
   @Input() isCurrentUser = false;
   @Output() messageEvent = new EventEmitter<IMessage>();
+  @Output() removeEvent = new EventEmitter<string>();
   text = '';
+
+  ngOnInit(): void {
+    this.notifyServer(`Chat client for ${this.title} was added...`);
+  }
+
+  ngOnDestroy(): void {
+    this.notifyServer(`Chat client for ${this.title} was removed...`);
+  }
+
+  notifyServer(text: string): void {
+    console.log(text);
+  }
 
   emitMessage() {
     this.messageEvent.emit({
@@ -20,5 +40,9 @@ export class ChatClientComponent {
     });
 
     this.text = '';
+  }
+
+  emitRemove() {
+    this.removeEvent.emit(this.title);
   }
 }

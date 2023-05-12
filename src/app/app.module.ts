@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { ChatClientComponent } from './chat-client/chat-client.component';
 import { FormsModule } from '@angular/forms';
+import { StyledButtonDirective } from './styled-button.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatScreenComponent,
-    ChatClientComponent
+    ChatClientComponent,
+    StyledButtonDirective
   ],
   imports: [
     BrowserModule,

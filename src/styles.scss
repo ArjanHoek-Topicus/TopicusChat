@@ -47,6 +47,10 @@ button {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 
+  &.btn-remove {
+    background-color: #990000;
+  }
+
   &:hover {
     background: var(--cl-light);
     color: var(--cl-secondary);

@@ -21,6 +21,7 @@
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "unique-names-generator": "^4.7.1",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

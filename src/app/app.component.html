@@ -4,10 +4,16 @@
 ></app-chat-screen>
 
 <div ngClass="clients">
-  <app-chat-client
-    *ngFor="let client of clients"
-    (messageEvent)="addMessage($event)"
-    [title]="client"
-    [isCurrentUser]="client === currentUser"
-  ></app-chat-client>
+  <div ngClass="clients-wrapper">
+    <app-chat-client
+      *ngFor="let client of clients"
+      (messageEvent)="addMessage($event)"
+      (removeEvent)="removeClient($event)"
+      [title]="client"
+      [isCurrentUser]="client === currentUser"
+    ></app-chat-client>
+  </div>
+  <div ngClass="clients-controller">
+    <button (click)="addClient()">Add client</button>
+  </div>
 </div>

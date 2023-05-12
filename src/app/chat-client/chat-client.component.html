@@ -1,3 +1,11 @@
 <h3>{{ title }}:</h3>
 <input [(ngModel)]="text" />
-<button ngClass="btn-send" type="button" (click)="emitMessage()">Send</button>
+<button
+  appStyledButton="btn-send"
+  ngClass="btn-send"
+  type="button"
+  (click)="emitMessage()"
+>
+  Send
+</button>
+<button (click)="emitRemove()" ngClass="btn-remove">X</button>

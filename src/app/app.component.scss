@@ -3,13 +3,27 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-}
 
-.clients {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6rem;
-  background-color: var(--cl-tertiary);
-  justify-content: space-between;
-  padding: 3rem 6rem;
+  .clients {
+    background-color: var(--cl-tertiary);
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6rem;
+      justify-content: space-between;
+      padding: 3rem 6rem;
+    }
+
+    &-controller {
+      background-color: var(--cl-primary);
+      padding: 1rem;
+      display: flex;
+      align-items: flex-end;
+
+      button {
+        flex: 1;
+      }
+    }
+  }
 }
