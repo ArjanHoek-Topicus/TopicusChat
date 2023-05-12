@@ -7,7 +7,9 @@
 
 .clients {
   display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
   background-color: var(--cl-tertiary);
   justify-content: space-between;
-  padding: 2rem 4rem;
+  padding: 3rem 6rem;
 }

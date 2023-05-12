@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  messages: string[] = [];
+  messages: string[] = [
+    'Hallo hoe gaat het?',
+    'Lekker hoor, met jou?',
+    'Mwoah, kon minder...',
+  ];
   clients: string[] = ['Giulio', 'Heidi', 'Florian'];
 
   addMessage(message: string) {

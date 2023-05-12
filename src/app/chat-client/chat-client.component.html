@@ -1,7 +1,3 @@
-<div>
-  <h3>Chat client: {{ title }}</h3>
-  <input [(ngModel)]="message" />
-  <button class="styled-button" type="button" (click)="emitMessage()">
-    Send
-  </button>
-</div>
+<h3>{{ title }}:</h3>
+<input [(ngModel)]="message" />
+<button ngClass="btn-send" type="button" (click)="emitMessage()">Send</button>
