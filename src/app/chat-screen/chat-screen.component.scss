@@ -7,6 +7,28 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+
+    li {
+      border-bottom: 1px dotted var(--cl-tertiary);
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+
+      &.is-current-user {
+        align-items: flex-end;
+        p {
+          text-align: right;
+        }
+      }
+
+      .client-name {
+        color: var(--cl-tertiary);
+      }
+
+      .text {
+        max-width: 50%;
+      }
+    }
   }
 }

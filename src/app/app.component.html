@@ -1,9 +1,13 @@
-<app-chat-screen [messages]="messages"></app-chat-screen>
+<app-chat-screen
+  [messages]="messages"
+  [currentUser]="currentUser"
+></app-chat-screen>
 
 <div ngClass="clients">
   <app-chat-client
     *ngFor="let client of clients"
     (messageEvent)="addMessage($event)"
     [title]="client"
+    [isCurrentUser]="client === currentUser"
   ></app-chat-client>
 </div>
