@@ -1,5 +1,9 @@
 <app-chat-screen [messages]="messages"></app-chat-screen>
 
-<div class="client-container">
-    <app-chat-client *ngFor="let client of clients" (messageEvent)="addMessage($event)" [title]="client"></app-chat-client>
+<div ngClass="clients">
+  <app-chat-client
+    *ngFor="let client of clients"
+    (messageEvent)="addMessage($event)"
+    [title]="client"
+  ></app-chat-client>
 </div>

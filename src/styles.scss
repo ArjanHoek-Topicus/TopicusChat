@@ -1,21 +1,23 @@
-.styled-button{
-    background: deepskyblue;
-    color: white;
-    border: 1px solid gray;
-    border-radius: 6px;
-    box-shadow: rgba(0,0,0, 0.2) 1px 2px;
-    line-height: 1.5rem;
-    font-size: 1rem;
-    padding: 8px 1rem;
-    &:hover{
-    background: cornflowerblue;
-    &:active{
-    background: dodgerblue;
-    }
-    }
-    }
-    
+@import "~normalize.css";
+:root {
+  --cl-light: #f1f6f9;
+  --cl-primary: #394867;
+  --cl-secondary: #212a3e;
+  --cl-tertiary: #9ba4b5;
+}
 
-    body {
-        background-color: red;
-    }
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  overflow: hidden;
+  height: 100vh;
+  font-family: monospace;
+}
