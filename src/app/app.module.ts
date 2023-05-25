@@ -7,7 +7,6 @@ import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { ChatClientComponent } from './chat-client/chat-client.component';
 import { FormsModule } from '@angular/forms';
 import { StyledButtonDirective } from './styled-button.directive';
-import { FormatChatMessagePipe } from './format-chat-message.pipe';
 
 @NgModule({
   declarations: [
@@ -15,14 +14,9 @@ import { FormatChatMessagePipe } from './format-chat-message.pipe';
     ChatScreenComponent,
     ChatClientComponent,
     StyledButtonDirective,
-    FormatChatMessagePipe
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
