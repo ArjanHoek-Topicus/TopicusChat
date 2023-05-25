@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { ChatClientComponent } from './chat-client/chat-client.component';
 import { FormsModule } from '@angular/forms';
-import { StyledButtonDirective } from './styled-button.directive';
+import { StyledButtonDirective } from '../directives/styled-button.directive';
 
 @NgModule({
   declarations: [
