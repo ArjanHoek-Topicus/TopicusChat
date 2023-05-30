@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { StyledButtonDirective } from '../directives/styled-button.directive';
 import { BeheerPageComponent } from './beheer-page/beheer-page.component';
 import { ChatPageComponent } from './chat-page/chat-page.component';
-import { StyledNavigationLinkDirective } from './styled-navigation-link.directive';
+import { StyledNavigationLinkDirective } from 'src/directives/styled-navigation-link/styled-navigation-link.directive';
 
 @NgModule({
   declarations: [

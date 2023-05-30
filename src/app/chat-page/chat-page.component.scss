@@ -1,8 +1,8 @@
 :host {
-  background-color: var(--cl-light);
-  height: 100%;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
 
   .clients {
     background-color: var(--cl-tertiary);
@@ -10,6 +10,8 @@
     &-wrapper {
       display: flex;
       flex-wrap: wrap;
+      max-height: 40vh;
+      overflow: auto;
       gap: 6rem;
       justify-content: space-between;
       padding: 3rem 6rem;

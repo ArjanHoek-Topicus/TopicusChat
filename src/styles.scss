@@ -13,6 +13,7 @@ html {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -55,4 +56,12 @@ button {
     background: var(--cl-light);
     color: var(--cl-secondary);
   }
+}
+
+// Directive styles
+.styled-nav-link {
+  background-color: var(--cl-secondary);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: inline-block;
 }
