@@ -1,1 +1,16 @@
-<p>beheer-page works!</p>
+<form>
+  <mat-form-field>
+    <mat-label>Select user</mat-label>
+    <mat-select [formControl]="form.controls.selectedUser">
+      <mat-option *ngFor="let user of users" [value]="user.name">
+        {{ user.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControl]="form.controls.filterName" />
+  </mat-form-field>
+  <mat-checkbox [formControl]="form.controls.hideActive">
+    Hide active
+  </mat-checkbox>
+</form>

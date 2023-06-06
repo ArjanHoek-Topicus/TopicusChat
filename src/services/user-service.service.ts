@@ -35,4 +35,8 @@ export class UserService {
   listUsers(): IUser[] {
     return this.activeUsers;
   }
+
+  getAllUsers(): IUser[] {
+    return mockUsers;
+  }
 }
