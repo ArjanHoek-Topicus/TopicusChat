@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { createMessages, createName, createNames } from 'src/mock';
+import { createMessages, createUser } from 'src/mock';
 import { IMessage } from 'src/models/messageInterface';
+import { IUser } from 'src/models/userInterface';
 import { UserService } from 'src/services/user-service.service';
 
 @Component({
@@ -9,9 +10,9 @@ import { UserService } from 'src/services/user-service.service';
   styleUrls: ['./chat-page.component.scss'],
 })
 export class ChatPageComponent implements OnInit {
-  clients!: string[];
+  clients!: IUser[];
   messages!: IMessage[];
-  currentUser!: string;
+  currentUser!: IUser;
 
   constructor(private userService: UserService) {}
 
@@ -21,16 +22,15 @@ export class ChatPageComponent implements OnInit {
     this.currentUser = this.clients[0];
   }
 
-  addMessage({ clientName, text, timestamp }: IMessage) {
-    const message: IMessage = { clientName, text, timestamp };
+  addMessage(message: IMessage) {
     this.messages.push(message);
   }
 
   addClient() {
-    this.userService.addUserToChat(createName());
+    this.userService.addUserToChat();
   }
 
-  removeClient(name: string) {
-    this.userService.removeUserFromChat(name);
+  removeClient(user: IUser) {
+    this.userService.removeUserFromChat(user);
   }
 }

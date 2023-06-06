@@ -1,6 +1,6 @@
 <app-chat-screen
   [messages]="messages"
-  [currentUser]="currentUser"
+  [currentUser]="currentUser.name"
 ></app-chat-screen>
 
 <div class="clients">
@@ -8,8 +8,8 @@
     <app-chat-client
       *ngFor="let client of clients"
       (messageEvent)="addMessage($event)"
-      (removeEvent)="removeClient($event)"
-      [title]="client"
+      (removeEvent)="removeClient(client)"
+      [user]="client"
       [isCurrentUser]="client === currentUser"
     ></app-chat-client>
   </div>

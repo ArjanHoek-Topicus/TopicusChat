@@ -1,10 +1,10 @@
 <ul class="messages-list">
   <li
     *ngFor="let message of messages | slice : -10"
-    [ngClass]="message.clientName === currentUser ? 'is-current-user' : ''"
+    [ngClass]="message.user.name === currentUser ? 'is-current-user' : ''"
   >
     <p>{{ message.timestamp | date : "short" }}</p>
-    <p ngClass="client-name">{{ message.clientName | titlecase }} says:</p>
+    <p ngClass="client-name">{{ message.user.name | titlecase }} says:</p>
     <p ngClass="text">{{ message.text }}</p>
   </li>
 </ul>

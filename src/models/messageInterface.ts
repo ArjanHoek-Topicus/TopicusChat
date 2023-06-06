@@ -1,5 +1,7 @@
+import { IUser } from './userInterface';
+
 export interface IMessage {
-  clientName: string;
+  user: IUser;
   text: string;
   timestamp: Date;
 }

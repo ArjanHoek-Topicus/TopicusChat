@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { IMessage } from 'src/models/messageInterface';
+import { IUser } from 'src/models/userInterface';
 
 @Component({
   selector: 'app-chat-client',
@@ -14,18 +15,18 @@ import { IMessage } from 'src/models/messageInterface';
   styleUrls: ['./chat-client.component.scss'],
 })
 export class ChatClientComponent implements OnInit, OnDestroy {
-  @Input() title = '';
+  @Input() user!: IUser;
   @Input() isCurrentUser = false;
   @Output() messageEvent = new EventEmitter<IMessage>();
-  @Output() removeEvent = new EventEmitter<string>();
+  @Output() removeEvent = new EventEmitter<IUser>();
   text = '';
 
   ngOnInit(): void {
-    this.notifyServer(`Chat client for ${this.title} was added...`);
+    this.notifyServer(`Chat client for ${this.user.name} was added...`);
   }
 
   ngOnDestroy(): void {
-    this.notifyServer(`Chat client for ${this.title} was removed...`);
+    this.notifyServer(`Chat client for ${this.user.name} was removed...`);
   }
 
   notifyServer(text: string): void {
@@ -34,7 +35,10 @@ export class ChatClientComponent implements OnInit, OnDestroy {
 
   emitMessage() {
     this.messageEvent.emit({
-      clientName: this.title,
+      user: {
+        name: this.user.name,
+        active: true,
+      },
       text: this.text,
       timestamp: new Date(),
     });
@@ -43,6 +47,6 @@ export class ChatClientComponent implements OnInit, OnDestroy {
   }
 
   emitRemove() {
-    this.removeEvent.emit(this.title);
+    this.removeEvent.emit(this.user);
   }
 }

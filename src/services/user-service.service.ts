@@ -1,34 +1,38 @@
 import { Injectable } from '@angular/core';
-import { createNames } from 'src/mock';
+import { createUsers } from 'src/mock';
+import { IUser } from 'src/models/userInterface';
 
-const mockUsers = createNames(20);
+const mockUsers = createUsers(20);
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  public activeUsers: string[];
+  public activeUsers: IUser[];
 
   constructor() {
-    const [user1, user2] = mockUsers;
-
-    this.activeUsers = [user1, user2];
+    this.activeUsers = mockUsers.slice(0, 2);
   }
 
-  addUserToChat(name: string) {
-    if (!this.activeUsers.includes(name)) {
-      this.activeUsers.push(name);
+  addUserToChat() {
+    const newUser = mockUsers.find(
+      (mockUser) => !this.activeUsers.find(({ name }) => name == mockUser.name)
+    );
+
+    if (newUser) {
+      this.activeUsers.push(newUser);
     }
   }
 
-  removeUserFromChat(name: string) {
-    const index = this.activeUsers.indexOf(name);
+  removeUserFromChat(user: IUser) {
+    const index = this.activeUsers.findIndex(({ name }) => name === user.name);
+
     if (index !== -1) {
       this.activeUsers.splice(index, 1);
     }
   }
 
-  listUsers(): string[] {
+  listUsers(): IUser[] {
     return this.activeUsers;
   }
 }
