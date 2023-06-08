@@ -39,4 +39,10 @@ export class UserService {
   getAllUsers(): IUser[] {
     return mockUsers;
   }
+
+  getInactiveUsers(): IUser[] {
+    return mockUsers.filter(
+      (mockUser) => !this.activeUsers.find(({ name }) => name === mockUser.name)
+    );
+  }
 }

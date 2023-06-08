@@ -18,8 +18,11 @@ export class BeheerPageComponent {
   });
 
   constructor(private userService: UserService) {
-    this.users = this.userService.getAllUsers();
-
+    this.users = this.userService.getInactiveUsers();
     this.form.valueChanges.subscribe((d) => console.log(d));
+  }
+
+  addToChat() {
+    console.log(this.form);
   }
 }
